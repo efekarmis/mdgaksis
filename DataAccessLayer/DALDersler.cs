@@ -140,6 +140,10 @@ namespace DataAccessLayer
             }
             
             rd.Close();
+            
+            
+            
+            
             return degerler;
         }
         public static int DersEkle(EntityDersler param)
