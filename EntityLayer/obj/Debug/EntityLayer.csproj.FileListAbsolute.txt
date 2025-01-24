@@ -1,0 +1,6 @@
+/Users/efe/RiderProjects/YazOkuluDersler/EntityLayer/bin/Debug/EntityLayer.dll
+/Users/efe/RiderProjects/YazOkuluDersler/EntityLayer/bin/Debug/EntityLayer.pdb
+/Users/efe/RiderProjects/YazOkuluDersler/EntityLayer/obj/Debug/EntityLayer.csproj.AssemblyReference.cache
+/Users/efe/RiderProjects/YazOkuluDersler/EntityLayer/obj/Debug/EntityLayer.csproj.CoreCompileInputs.cache
+/Users/efe/RiderProjects/YazOkuluDersler/EntityLayer/obj/Debug/EntityLayer.dll
+/Users/efe/RiderProjects/YazOkuluDersler/EntityLayer/obj/Debug/EntityLayer.pdb
