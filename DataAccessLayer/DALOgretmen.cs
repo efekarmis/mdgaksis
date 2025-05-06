@@ -1,79 +1,194 @@
 using System;
 using System.Data;
 using System.Collections.Generic;
-using System.Data.SqlClient;
-using EntityLayer;
 using MySql.Data.MySqlClient;
+using EntityLayer;
 
 namespace DataAccessLayer
 {
     public class DALOgretmen
     {
+        public static bool OgretmenGiris(string ogretmenID, string ogretmenSifre)
+        {
+            bool girisBasarili = false;
+            string query = "SELECT KULLANICIID FROM TBLKULLANICI WHERE KULLANICIID = @id AND KULLANICISIFRE = @sifre AND KULLANICITIPI = 1";
+
+            if (!int.TryParse(ogretmenID, out int idAsInt))
+            {
+                Console.WriteLine("DALOgretmen.OgretmenGiris: Geçersiz öğretmen ID formatı.");
+                return false;
+            }
+
+            using (MySqlConnection connection = new MySqlConnection(Baglanti.ConnectionString))
+            using (MySqlCommand cmd = new MySqlCommand(query, connection))
+            {
+                cmd.Parameters.AddWithValue("@id", idAsInt);
+                cmd.Parameters.AddWithValue("@sifre", ogretmenSifre);
+
+                try
+                {
+                    connection.Open();
+                    using (MySqlDataReader dr = cmd.ExecuteReader())
+                    {
+                        girisBasarili = dr.HasRows;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("DALOgretmen.OgretmenGiris Hata: " + ex.Message);
+                }
+            }
+            return girisBasarili;
+        }
+
         public static int OgretmenEkle(EntityOgretmen param)
         {
-            var cmd1 = new MySqlCommand(
-                "INSERT INTO TBLOGRETMEN(OGRTADSOYAD) VALUES (@p1)",
-                Baglanti.bgl);
-            if (cmd1.Connection.State != ConnectionState.Open) cmd1.Connection.Open();
+            int etkilenenSatir = 0;
 
-            cmd1.Parameters.AddWithValue("@p1", param.OGRTADSOYAD);
-            var sonuc = cmd1.ExecuteNonQuery();
+            string query = "INSERT INTO TBLOGRETMEN(OGRTAD, OGRTSOYAD, OGRTSIFRE, OGRTFOTOGRAF) VALUES (@OgrtAd, @OgrtSoyad, @OgrtSifre, @OgrtFotograf)";
 
-            return sonuc;
+            using (MySqlConnection connection = new MySqlConnection(Baglanti.ConnectionString))
+            using (MySqlCommand cmd = new MySqlCommand(query, connection))
+            {
+                cmd.Parameters.AddWithValue("@OgrtAd", param.OGRTAD);
+                cmd.Parameters.AddWithValue("@OgrtSoyad", param.OGRTSOYAD);
+                cmd.Parameters.AddWithValue("@OgrtSifre", param.OGRTSIFRE);
+                cmd.Parameters.AddWithValue("@OgrtFotograf", (object)param.OGRTFOTOGRAF ?? DBNull.Value);
+
+                try
+                {
+                    connection.Open();
+                    etkilenenSatir = cmd.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("DALOgretmen.OgretmenEkle Hata: " + ex.Message);
+                    etkilenenSatir = -1;
+                }
+            }
+            return etkilenenSatir;
         }
+
         public static List<EntityOgretmen> OgretmenListele()
         {
             List<EntityOgretmen> degerler = new List<EntityOgretmen>();
-            MySqlCommand cmd2 = new MySqlCommand(
-                "SELECT * FROM TBLOGRETMEN", Baglanti.bgl);
-            if (cmd2.Connection.State != ConnectionState.Open) cmd2.Connection.Open();
-            MySqlDataReader rd = cmd2.ExecuteReader();
-            while (rd.Read())
-            {
-                EntityOgretmen ent = new EntityOgretmen();
 
-                ent.OGRTID = Convert.ToInt32(rd["OGRTID"].ToString());
-                ent.OGRTADSOYAD = rd["OGRTADSOYAD"].ToString();
-                degerler.Add(ent);
+            string query = "SELECT OGRTID, OGRTAD, OGRTSOYAD, OGRTSIFRE, OGRTFOTOGRAF FROM TBLOGRETMEN";
+
+            using (MySqlConnection connection = new MySqlConnection(Baglanti.ConnectionString))
+            using (MySqlCommand cmd = new MySqlCommand(query, connection))
+            {
+                try
+                {
+                    connection.Open();
+                    using (MySqlDataReader rd = cmd.ExecuteReader())
+                    {
+                        while (rd.Read())
+                        {
+                            EntityOgretmen ent = new EntityOgretmen
+                            {
+                                OGRTID = Convert.ToInt32(rd["OGRTID"]),
+                                OGRTAD = rd["OGRTAD"].ToString(),
+                                OGRTSOYAD = rd["OGRTSOYAD"].ToString(),
+                                OGRTSIFRE = rd["OGRTSIFRE"].ToString(),
+                                OGRTFOTOGRAF = rd["OGRTFOTOGRAF"] != DBNull.Value ? rd["OGRTFOTOGRAF"].ToString() : null
+                            };
+                            degerler.Add(ent);
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("DALOgretmen.OgretmenListele Hata: " + ex.Message);
+                }
             }
-            rd.Close();
             return degerler;
         }
-        public static bool OgretmenSil(int param)
+
+        public static bool OgretmenSil(int ogretmenId)
         {
-            MySqlCommand cmd3 = new MySqlCommand("DELETE FROM TBLOGRETMEN WHERE OGRID=@P1", Baglanti.bgl);
-            if (cmd3.Connection.State != ConnectionState.Open) cmd3.Connection.Open();
-            cmd3.Parameters.AddWithValue("@P1", param);
-            return cmd3.ExecuteNonQuery() > 0;
+            int etkilenenSatir = 0;
+            string query = "DELETE FROM TBLOGRETMEN WHERE OGRTID=@P1";
+
+            using (MySqlConnection connection = new MySqlConnection(Baglanti.ConnectionString))
+            using (MySqlCommand cmd = new MySqlCommand(query, connection))
+            {
+                cmd.Parameters.AddWithValue("@P1", ogretmenId);
+                try
+                {
+                    connection.Open();
+                    etkilenenSatir = cmd.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("DALOgretmen.OgretmenSil Hata: " + ex.Message);
+                }
+            }
+            return etkilenenSatir > 0;
         }
+
         public static List<EntityOgretmen> OgretmenDetay(int id)
         {
             List<EntityOgretmen> degerler = new List<EntityOgretmen>();
-            MySqlCommand cmd4 = new MySqlCommand(
-                "SELECT * FROM TBLOGRETMEN WHERE OGRID=@P1", Baglanti.bgl);
-            if (cmd4.Connection.State != ConnectionState.Open) cmd4.Connection.Open();
-            cmd4.Parameters.AddWithValue("@P1", id);
-            MySqlDataReader rd = cmd4.ExecuteReader();
-            while (rd.Read())
-            {
-                EntityOgretmen ent = new EntityOgretmen();
 
-                ent.OGRTADSOYAD = rd["OGRTADSOYAD"].ToString();
-                degerler.Add(ent);
+            string query = "SELECT OGRTID, OGRTAD, OGRTSOYAD, OGRTSIFRE, OGRTFOTOGRAF FROM TBLOGRETMEN WHERE OGRTID=@P1";
+
+            using (MySqlConnection connection = new MySqlConnection(Baglanti.ConnectionString))
+            using (MySqlCommand cmd = new MySqlCommand(query, connection))
+            {
+                cmd.Parameters.AddWithValue("@P1", id);
+                try
+                {
+                    connection.Open();
+                    using (MySqlDataReader rd = cmd.ExecuteReader())
+                    {
+                        while (rd.Read())
+                        {
+                            EntityOgretmen ent = new EntityOgretmen
+                            {
+                                OGRTID = Convert.ToInt32(rd["OGRTID"]),
+                                OGRTAD = rd["OGRTAD"].ToString(),
+                                OGRTSOYAD = rd["OGRTSOYAD"].ToString(),
+                                OGRTSIFRE = rd["OGRTSIFRE"].ToString(),
+                                OGRTFOTOGRAF = rd["OGRTFOTOGRAF"] != DBNull.Value ? rd["OGRTFOTOGRAF"].ToString() : null
+                            };
+                            degerler.Add(ent);
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("DALOgretmen.OgretmenDetay Hata: " + ex.Message);
+                }
             }
-            rd.Close();
             return degerler;
         }
 
         public static bool OgretmenGuncelle(EntityOgretmen deger)
         {
-            MySqlCommand cmd5 =
-                new MySqlCommand(
-                    "UPDATE TBLOGRETMEN SET OGRTADSOYAD=@P1 WHERE OGRTID=@P2",Baglanti.bgl);
-            if (cmd5.Connection.State != ConnectionState.Open) cmd5.Connection.Open();
-            cmd5.Parameters.AddWithValue("@P1", deger.OGRTADSOYAD);
-            cmd5.Parameters.AddWithValue("@P2", deger.OGRTID);
-            return cmd5.ExecuteNonQuery() > 0;
+            int etkilenenSatir = 0;
+
+            string query = "UPDATE TBLOGRETMEN SET OGRTAD=@OgrtAd, OGRTSOYAD=@OgrtSoyad, OGRTSIFRE=@OgrtSifre, OGRTFOTOGRAF=@OgrtFotograf WHERE OGRTID=@OgrtId";
+
+            using (MySqlConnection connection = new MySqlConnection(Baglanti.ConnectionString))
+            using (MySqlCommand cmd = new MySqlCommand(query, connection))
+            {
+                cmd.Parameters.AddWithValue("@OgrtAd", deger.OGRTAD);
+                cmd.Parameters.AddWithValue("@OgrtSoyad", deger.OGRTSOYAD);
+                cmd.Parameters.AddWithValue("@OgrtSifre", deger.OGRTSIFRE);
+                cmd.Parameters.AddWithValue("@OgrtFotograf", (object)deger.OGRTFOTOGRAF ?? DBNull.Value);
+                cmd.Parameters.AddWithValue("@OgrtId", deger.OGRTID);
+                try
+                {
+                    connection.Open();
+                    etkilenenSatir = cmd.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("DALOgretmen.OgretmenGuncelle Hata: " + ex.Message);
+                }
+            }
+            return etkilenenSatir > 0;
         }
     }
 }

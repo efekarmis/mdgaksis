@@ -1,0 +1,324 @@
+/* === YENİ NAVBAR STİLİ === */
+:root{
+    --app-navbar-secondarycolor: #fb2;
+    --app-navbar-oldsecondary-color: #ffd369;
+    --app-navbar-fontcolor: #f6f4e6;
+} 
+/*#fddb3a*/
+/* Temel Navbar Konteyneri (ID ile hedefleme daha güvenli) */
+#ctl00_dynamicNavbar {
+    background-color: var(--app-navbar-color-dark) !important; /* Koyu Arka Plan */
+    border: none !important; /* Bootstrap border'ını ez */
+    border-radius: 0 !important; /* Bootstrap radius'unu ez */
+    margin-bottom: 0 !important; /* Bootstrap margin'ini ez */
+    font-family: "Montserrat", sans-serif; /* Yeni Font */
+    /* position: static; navbar-static-top'tan gelir */
+    min-height: 40px; /* Bootstrap min-height'ı */
+}
+
+/* Bootstrap container-fluid için ek ayar gerekebilir */
+#ctl00_dynamicNavbar .container-fluid {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+
+/* Navbar Markası (Sol Üst) */
+#ctl00_dynamicNavbar .navbar-brand {
+    color: var(--app-navbar-fontcolor);
+    font-size: 1.4em;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 15px 15px; /* Bootstrap padding */
+    line-height: 20px; /* Bootstrap line-height */
+    transition: color 0.2s ease-in-out;
+    height: 60px; /* Bootstrap height */
+    justify-content: center;
+}
+#ctl00_dynamicNavbar .navbar-brand:hover,
+#ctl00_dynamicNavbar .navbar-brand:focus {
+    color: var(--app-navbar-secondarycolor); /* Sarı Hover */
+    background-color: transparent !important;
+}
+
+/* Mobil Menü Butonu (Hamburger) */
+#ctl00_dynamicNavbar .navbar-toggle {
+    border-color: rgba(246, 244, 230, 0.5) !important;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    margin-right: 15px; /* Bootstrap margin */
+    padding: 9px 10px; /* Bootstrap padding */
+    background-color: transparent !important; /* Başlangıç arka planı */
+}
+#ctl00_dynamicNavbar .navbar-toggle:hover,
+#ctl00_dynamicNavbar .navbar-toggle:focus {
+    background-color: rgba(253, 219, 58, 0.2) !important; /* Hover arka planı */
+}
+#ctl00_dynamicNavbar .navbar-toggle .icon-bar {
+    background-color: var(--app-navbar-fontcolor) !important; /* Çizgi rengi */
+}
+
+/* Navbar Linkleri Alanı (UL) */
+#ctl00_dynamicNavbar .navbar-nav {
+    margin: 0; /* Bootstrap margin sıfırlama */
+    min-height: 60px;
+}
+
+/* Navbar Linkleri (li > a) */
+#ctl00_dynamicNavbar .navbar-nav > li > a {
+    color: var(--app-navbar-fontcolor);
+    text-decoration: none;
+    font-size: 1.05em;
+    text-transform: uppercase;
+    font-weight: 500;
+    /* Alt padding noktaya yer açar: Üst LR Alt */
+    padding: 15px 15px 25px 15px !important; /* Bootstrap padding'ini ez */
+    margin: 0 2px;
+    position: relative; /* Nokta konumu için */
+    transition: color 0.2s ease-in-out;
+    display: flex !important; /* Bootstrap display'ini ez */
+    align-items: center;
+    justify-content: center;
+    line-height: 20px !important; /* Bootstrap line-height'ı ez */
+    background-color: transparent !important; /* Önemli! */
+    border: none !important; /* Önemli! */
+    white-space: nowrap;
+}
+
+/* Link İçindeki İkon */
+#ctl00_dynamicNavbar .navbar-nav > li > a .glyphicon {
+    font-size: 1.1em;
+    margin-right: 8px;
+    color: var(--app-navbar-fontcolor); /* Başlangıç rengi */
+    transition: color 0.2s ease-in-out;
+    vertical-align: middle;
+    line-height: 1;
+    top: 0;
+}
+
+/* Link Metni */
+#ctl00_dynamicNavbar .navbar-nav > li > a .link-text {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* Link Hover Noktası */
+#ctl00_dynamicNavbar .navbar-nav > li > a .hover-dot {
+    position: absolute;
+    bottom: 8px; /* Linkin altından boşluk */
+    left: 50%;
+    transform: translateX(-50%) scale(0); /* Gizli ve ortalı */
+    width: 6px;
+    height: 6px;
+    background: var(--app-navbar-secondarycolor); /* Sarı */
+    border-radius: 50%;
+    display: none;
+}
+
+/* Link Üzerine Gelince (Hover & Focus) */
+#ctl00_dynamicNavbar .navbar-nav > li > a:hover,
+#ctl00_dynamicNavbar .navbar-nav > li > a:focus {
+    color: var(--app-navbar-secondarycolor) !important; /* Sarı */
+    background-color: transparent !important; /* Önemli! */
+    outline: none;
+}
+#ctl00_dynamicNavbar .navbar-nav > li > a:hover .glyphicon,
+#ctl00_dynamicNavbar .navbar-nav > li > a:focus .glyphicon {
+    color: var(--app-navbar-secondarycolor) !important; /* İkon da sarı */
+}
+#ctl00_dynamicNavbar .navbar-nav > li > a:hover .hover-dot,
+#ctl00_dynamicNavbar .navbar-nav > li > a:focus .hover-dot {
+    opacity: 1;
+    transform: translateX(-50%) scale(1); /* Görünür yap */
+}
+
+/* Aktif Link Stili */
+#ctl00_dynamicNavbar .navbar-nav > li.active > a {
+    color: var(--app-navbar-secondarycolor) !important; /* Sarı */
+    background-color: transparent !important; /* Önemli! */
+    box-shadow: none !important; /* Önemli! */
+}
+#ctl00_dynamicNavbar .navbar-nav > li.active > a .glyphicon {
+    color: var(--app-navbar-secondarycolor) !important; /* İkon da sarı */
+}
+#ctl00_dynamicNavbar .navbar-nav > li.active > a .hover-dot {
+    opacity: 1 !important;
+    transform: translateX(-50%) scale(1) !important; /* Nokta da görünür */
+}
+
+/* --- Sağ Taraftaki Öğeler (Profil, Mesaj vb.) --- */
+#ctl00_dynamicNavbar .navbar-right {
+    margin-right: -15px; /* Bootstrap sağ container padding'ini dengele */
+    margin-left: 0;
+    float: right!important; /* Bootstrap float */
+}
+
+/* Sağdaki linkleri sola uydur */
+#ctl00_dynamicNavbar .navbar-right > li > a {
+    color: var(--app-navbar-fontcolor) !important;
+    padding: 15px 10px 25px 10px !important; /* Sol linklerle benzer padding */
+    transition: color 0.2s ease-in-out;
+    display: flex !important; /* Hizalama için */
+    align-items: center;
+    line-height: 20px !important; /* Bootstrap line-height */
+    position: relative; /* Gerekirse dropdown için */
+    height: 60px;
+}
+#ctl00_dynamicNavbar .navbar-right > li > a:hover,
+#ctl00_dynamicNavbar .navbar-right > li > a:focus {
+    color: var(--app-navbar-secondarycolor) !important;
+    background-color: transparent !important;
+}
+
+/* Mesaj İkonu Linki (Özelleştirme) */
+#ctl00_dynamicNavbar .navbar-right > li > a.navbar-icon-link .glyphicon {
+    color: var(--app-navbar-fontcolor) !important;
+    font-size: 1.4em;
+    transition: color 0.2s ease-in-out;
+}
+#ctl00_dynamicNavbar .navbar-right > li > a.navbar-icon-link:hover .glyphicon,
+#ctl00_dynamicNavbar .navbar-right > li > a.navbar-icon-link:focus .glyphicon {
+    color: var(--app-navbar-secondarycolor) !important;
+}
+
+/* Profil Dropdown Linki */
+#ctl00_dynamicNavbar .navbar-right .dropdown > a.dropdown-toggle {
+    /* Zaten .navbar-right > li > a'dan stil alıyor */
+}
+
+/* Profil Resmi */
+#ctl00_dynamicNavbar .navbar-profile-pic {
+    height: 30px !important;
+    width: 30px !important;
+    border-radius: 50% !important;
+    object-fit: cover;
+    margin-right: 8px;
+    vertical-align: middle;
+    border: 1px solid var(--app-navbar-secondarycolor) !important; /* Sarı çerçeve */
+}
+
+/* Dropdown Caret (Ok) */
+#ctl00_dynamicNavbar .navbar-right .dropdown > a.dropdown-toggle .caret {
+    border-top-color: var(--app-navbar-fontcolor) !important;
+    border-bottom-color: var(--app-navbar-fontcolor) !important;
+    margin-left: 5px;
+    transition: all 0.2s ease-in-out;
+}
+#ctl00_dynamicNavbar .navbar-right .dropdown.open > a.dropdown-toggle .caret, /* Açıkken */
+#ctl00_dynamicNavbar .navbar-right .dropdown > a.dropdown-toggle:hover .caret,
+#ctl00_dynamicNavbar .navbar-right .dropdown > a.dropdown-toggle:focus .caret {
+    border-top-color: var(--app-navbar-secondarycolor) !important;
+    border-bottom-color: var(--app-navbar-secondarycolor) !important;
+}
+
+/* Dropdown'ın açıkkenki link stili */
+#ctl00_dynamicNavbar .navbar-right .dropdown.open > a.dropdown-toggle {
+    color: var(--app-navbar-secondarycolor) !important;
+    background-color: transparent !important;
+}
+
+
+/* Açılır Menü */
+#ctl00_dynamicNavbar .navbar-right .dropdown-menu {
+    background-color: #333 !important; /* Koyu arka plan */
+    border: 1px solid #444 !important;
+    border-radius: 4px !important;
+    box-shadow: 0 6px 12px rgba(0,0,0,.175) !important;
+    padding: 5px 0 !important;
+    margin-top: 0 !important; /* Bootstrap boşluğunu sıfırla */
+    right: 0; /* Bootstrap sağa hizalama */
+    left: auto; /* Bootstrap sağa hizalama */
+}
+
+/* Açılır Menü Linkleri */
+#ctl00_dynamicNavbar .navbar-right .dropdown-menu > li > a {
+    color: var(--app-navbar-fontcolor) !important;
+    padding: 8px 20px !important;
+    font-size: 0.95em;
+    font-weight: 500;
+    transition: all 0.2s ease-in-out;
+    display: block !important; /* Önemli */
+    line-height: 1.42857143 !important; /* Bootstrap */
+    white-space: nowrap;
+}
+#ctl00_dynamicNavbar .navbar-right .dropdown-menu > li > a .glyphicon {
+    margin-right: 8px;
+    opacity: 0.8;
+    color: var(--app-navbar-fontcolor) !important; /* İkon rengi */
+    transition: color 0.2s ease-in-out;
+}
+
+/* Açılır Menü Link Hover */
+#ctl00_dynamicNavbar .navbar-right .dropdown-menu > li > a:hover,
+#ctl00_dynamicNavbar .navbar-right .dropdown-menu > li > a:focus {
+    color: var(--app-navbar-secondarycolor) !important; /* Sarı hover */
+    background-color: #444 !important;
+    text-decoration: none !important;
+}
+#ctl00_dynamicNavbar .navbar-right .dropdown-menu > li > a:hover .glyphicon,
+#ctl00_dynamicNavbar .navbar-right .dropdown-menu > li > a:focus .glyphicon {
+    color: var(--app-navbar-secondarycolor) !important; /* İkon da sarı */
+}
+
+/* Açılır Menü Ayırıcı Çizgi */
+#ctl00_dynamicNavbar .navbar-right .dropdown-menu .divider {
+    background-color: #444 !important;
+    height: 1px; /* Bootstrap */
+    margin: 9px 0 !important; /* Bootstrap */
+    overflow: hidden; /* Bootstrap */
+}
+
+
+/* Mobil Görünümde Açılan Menü Stilleri */
+@media (max-width: 767px) {
+    #ctl00_dynamicNavbar .navbar-nav {
+        margin: 7.5px -15px; /* Bootstrap mobil margin */
+    }
+    #ctl00_dynamicNavbar .navbar-nav > li > a {
+        padding-top: 10px !important;
+        padding-bottom: 15px !important; /* Mobil için nokta yeri */
+        line-height: 20px !important;
+        justify-content: flex-start; /* Sola hizala */
+    }
+    #ctl00_dynamicNavbar .navbar-nav > li > a .hover-dot {
+        bottom: 5px; /* Mobil için nokta konumu */
+        left: 15px; /* İkonun altına yakın */
+        transform: translateX(0) scale(0); /* Sadece scale */
+    }
+    #ctl00_dynamicNavbar .navbar-nav > li > a:hover .hover-dot,
+    #ctl00_dynamicNavbar .navbar-nav > li > a:focus .hover-dot,
+    #ctl00_dynamicNavbar .navbar-nav > li.active > a .hover-dot {
+        transform: translateX(0) scale(1) !important; /* Sadece scale */
+    }
+    #ctl00_dynamicNavbar .navbar-right {
+        margin-right: -15px;
+        margin-left: -15px;
+        float: none!important; /* Mobil float sıfırlama */
+    }
+    #ctl00_dynamicNavbar .navbar-right > li > a {
+        padding-top: 10px !important;
+        padding-bottom: 10px !important; /* Mobil dropdown link padding */
+    }
+
+    #ctl00_dynamicNavbar .navbar-right .dropdown-menu {
+        position: static !important;
+        float: none !important;
+        width: auto !important;
+        margin-top: 0 !important;
+        background-color: transparent !important;
+        border: 0 !important;
+        box-shadow: none !important;
+    }
+    #ctl00_dynamicNavbar .navbar-right .dropdown-menu > li > a {
+        padding-left: 30px !important; /* Girinti */
+        color: var(--app-navbar-fontcolor) !important; /* Mobil dropdown link rengi */
+        line-height: 20px !important;
+    }
+    #ctl00_dynamicNavbar .navbar-right .dropdown-menu > li > a:hover,
+    #ctl00_dynamicNavbar .navbar-right .dropdown-menu > li > a:focus {
+        color: var(--app-navbar-secondarycolor) !important;
+        background-color: rgba(255, 255, 255, 0.1) !important; /* Hafif hover */
+    }
+}
+
+/* === YENİ NAVBAR STİLİ SONU === */

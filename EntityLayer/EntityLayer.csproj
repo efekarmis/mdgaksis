@@ -40,10 +40,25 @@
     </ItemGroup>
     <ItemGroup>
         <Compile Include="EntityBasvuruForm.cs"/>
-        <Compile Include="EntityDersler.cs"/>
+        <Compile Include="EntityDers.cs" />
+        <Compile Include="EntityDersKayit.cs" />
+        <Compile Include="EntityDuyuru.cs" />
+        <Compile Include="EntityKullanici.cs" />
+        <Compile Include="EntityMesaj.cs" />
         <Compile Include="EntityOgrenci.cs"/>
         <Compile Include="EntityOgretmen.cs"/>
+        <Compile Include="obj\Debug\.NETFramework,Version=v4.8.AssemblyAttributes.cs" />
         <Compile Include="Properties\AssemblyInfo.cs"/>
+    </ItemGroup>
+    <ItemGroup>
+      <Content Include=".DS_Store" />
+      <Content Include="bin\Debug\EntityLayer.dll" />
+      <Content Include="bin\Debug\EntityLayer.pdb" />
+      <Content Include="obj\Debug\EntityLayer.csproj.AssemblyReference.cache" />
+      <Content Include="obj\Debug\EntityLayer.csproj.CoreCompileInputs.cache" />
+      <Content Include="obj\Debug\EntityLayer.csproj.FileListAbsolute.txt" />
+      <Content Include="obj\Debug\EntityLayer.dll" />
+      <Content Include="obj\Debug\EntityLayer.pdb" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets"/>
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

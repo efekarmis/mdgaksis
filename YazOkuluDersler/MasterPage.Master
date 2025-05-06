@@ -1,0 +1,33 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="YazOkulu.MasterPage" %>
+
+<!DOCTYPE html>
+<html lang="tr">
+
+<head runat="server">
+    <title>Yaz Okulu Sistemi</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src='<%= ResolveUrl("~/Scripts/jquery-3.7.1.min.js") %>'></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="navbar.css">
+    
+</head>
+<body>
+    <form id="formMaster" runat="server">
+        <div id="page-container">
+             <nav class='navbar navbar-inverse navbar-static-top' id="dynamicNavbar" runat="server">
+            </nav>
+
+            <div class="container-fluid allPageContainer">
+                 <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+         </div>
+    </form>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</body>
+</html>

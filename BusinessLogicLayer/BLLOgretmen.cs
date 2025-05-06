@@ -6,9 +6,15 @@ namespace BusinessLogicLayer
 {
     public class BLLOgretmen
     {
+        public static bool OgretmenGirisBLL(string ogretmenID, string ogretmenSifre)
+        {
+            return DALOgretmen.OgretmenGiris(ogretmenID, ogretmenSifre);
+        }
         public static int OgretmenEkleBLL(EntityOgretmen param)
         {
-            if (param.OGRTADSOYAD != null)
+            if (param.OGRTAD != null && param.OGRTAD != "" &&
+                param.OGRTSOYAD != null && param.OGRTSOYAD != ""
+                )
                 return DALOgretmen.OgretmenEkle(param);
 
             return -1;
@@ -35,7 +41,8 @@ namespace BusinessLogicLayer
 
         public static bool OgretmenGuncelleBll(EntityOgretmen param)
         {
-            if (param.OGRTADSOYAD != null && param.OGRTADSOYAD != "" 
+            if (param.OGRTAD != null && param.OGRTAD != "" &&
+                param.OGRTSOYAD != null && param.OGRTSOYAD != ""
                 && param.OGRTID > 0)
             {
                 return DALOgretmen.OgretmenGuncelle(param);

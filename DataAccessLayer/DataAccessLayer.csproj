@@ -65,6 +65,7 @@
         </Reference>
         <Reference Include="System.Core"/>
         <Reference Include="System.Data"/>
+        <Reference Include="System.Data.Linq" />
         <Reference Include="System.Diagnostics.DiagnosticSource, Version=8.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
             <HintPath>..\packages\System.Diagnostics.DiagnosticSource.8.0.1\lib\net462\System.Diagnostics.DiagnosticSource.dll</HintPath>
         </Reference>
@@ -93,10 +94,14 @@
     </ItemGroup>
     <ItemGroup>
         <Compile Include="Baglanti.cs"/>
-        <Compile Include="DALDersler.cs" />
-        <Compile Include="DALKontenjanlar.cs" />
+        <Compile Include="DALBasvuru.cs" />
+        <Compile Include="DALDers.cs" />
+        <Compile Include="DALDuyuru.cs" />
+        <Compile Include="DALKullanici.cs" />
+        <Compile Include="DALMesaj.cs" />
         <Compile Include="DALOgrenci.cs"/>
         <Compile Include="DALOgretmen.cs" />
+        <Compile Include="obj\Debug\.NETFramework,Version=v4.8.AssemblyAttributes.cs" />
         <Compile Include="Properties\AssemblyInfo.cs"/>
     </ItemGroup>
     <ItemGroup>
@@ -107,6 +112,51 @@
     </ItemGroup>
     <ItemGroup>
         <None Include="packages.config"/>
+    </ItemGroup>
+    <ItemGroup>
+      <Content Include=".DS_Store" />
+      <Content Include="bin\Debug\BouncyCastle.Cryptography.dll" />
+      <Content Include="bin\Debug\BouncyCastle.Cryptography.xml" />
+      <Content Include="bin\Debug\DataAccessLayer.dll" />
+      <Content Include="bin\Debug\DataAccessLayer.pdb" />
+      <Content Include="bin\Debug\EntityLayer.dll" />
+      <Content Include="bin\Debug\EntityLayer.pdb" />
+      <Content Include="bin\Debug\Google.Protobuf.dll" />
+      <Content Include="bin\Debug\Google.Protobuf.pdb" />
+      <Content Include="bin\Debug\Google.Protobuf.xml" />
+      <Content Include="bin\Debug\K4os.Compression.LZ4.dll" />
+      <Content Include="bin\Debug\K4os.Compression.LZ4.Streams.dll" />
+      <Content Include="bin\Debug\K4os.Compression.LZ4.Streams.xml" />
+      <Content Include="bin\Debug\K4os.Compression.LZ4.xml" />
+      <Content Include="bin\Debug\K4os.Hash.xxHash.dll" />
+      <Content Include="bin\Debug\K4os.Hash.xxHash.xml" />
+      <Content Include="bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll" />
+      <Content Include="bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml" />
+      <Content Include="bin\Debug\MySql.Data.dll" />
+      <Content Include="bin\Debug\MySql.Data.xml" />
+      <Content Include="bin\Debug\System.Buffers.dll" />
+      <Content Include="bin\Debug\System.Buffers.xml" />
+      <Content Include="bin\Debug\System.Configuration.ConfigurationManager.dll" />
+      <Content Include="bin\Debug\System.Configuration.ConfigurationManager.xml" />
+      <Content Include="bin\Debug\System.Diagnostics.DiagnosticSource.dll" />
+      <Content Include="bin\Debug\System.Diagnostics.DiagnosticSource.xml" />
+      <Content Include="bin\Debug\System.IO.Pipelines.dll" />
+      <Content Include="bin\Debug\System.IO.Pipelines.xml" />
+      <Content Include="bin\Debug\System.Memory.dll" />
+      <Content Include="bin\Debug\System.Memory.xml" />
+      <Content Include="bin\Debug\System.Numerics.Vectors.dll" />
+      <Content Include="bin\Debug\System.Numerics.Vectors.xml" />
+      <Content Include="bin\Debug\System.Runtime.CompilerServices.Unsafe.dll" />
+      <Content Include="bin\Debug\System.Runtime.CompilerServices.Unsafe.xml" />
+      <Content Include="bin\Debug\System.Threading.Tasks.Extensions.dll" />
+      <Content Include="bin\Debug\System.Threading.Tasks.Extensions.xml" />
+      <Content Include="bin\Debug\ZstdSharp.dll" />
+      <Content Include="obj\Debug\DataAccessLayer.csproj.AssemblyReference.cache" />
+      <Content Include="obj\Debug\DataAccessLayer.csproj.CopyComplete" />
+      <Content Include="obj\Debug\DataAccessLayer.csproj.CoreCompileInputs.cache" />
+      <Content Include="obj\Debug\DataAccessLayer.csproj.FileListAbsolute.txt" />
+      <Content Include="obj\Debug\DataAccessLayer.dll" />
+      <Content Include="obj\Debug\DataAccessLayer.pdb" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets"/>
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

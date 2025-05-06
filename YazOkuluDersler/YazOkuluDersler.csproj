@@ -113,20 +113,158 @@
         </Reference>
     </ItemGroup>
     <ItemGroup>
+        <Content Include=".DS_Store" />
+        <Content Include="BakiyeYukle.aspx" />
+        <Content Include="BasvuruListesi.aspx" />
+        <Content Include="bin\.DS_Store" />
+        <Content Include="bin\Antlr3.Runtime.dll" />
+        <Content Include="bin\Antlr3.Runtime.pdb" />
+        <Content Include="bin\BouncyCastle.Cryptography.dll" />
+        <Content Include="bin\BouncyCastle.Cryptography.xml" />
+        <Content Include="bin\BusinessLogicLayer.dll" />
+        <Content Include="bin\BusinessLogicLayer.pdb" />
+        <Content Include="bin\DataAccessLayer.dll" />
+        <Content Include="bin\DataAccessLayer.pdb" />
+        <Content Include="bin\EntityLayer.dll" />
+        <Content Include="bin\EntityLayer.pdb" />
+        <Content Include="bin\Google.Protobuf.dll" />
+        <Content Include="bin\Google.Protobuf.pdb" />
+        <Content Include="bin\Google.Protobuf.xml" />
+        <Content Include="bin\K4os.Compression.LZ4.dll" />
+        <Content Include="bin\K4os.Compression.LZ4.Streams.dll" />
+        <Content Include="bin\K4os.Compression.LZ4.Streams.xml" />
+        <Content Include="bin\K4os.Compression.LZ4.xml" />
+        <Content Include="bin\K4os.Hash.xxHash.dll" />
+        <Content Include="bin\K4os.Hash.xxHash.xml" />
+        <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll" />
+        <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml" />
+        <Content Include="bin\Microsoft.Web.Infrastructure.dll" />
+        <Content Include="bin\MySql.Data.dll" />
+        <Content Include="bin\MySql.Data.xml" />
+        <Content Include="bin\Newtonsoft.Json.dll" />
+        <Content Include="bin\Newtonsoft.Json.xml" />
+        <Content Include="bin\roslyn\csc.exe" />
+        <Content Include="bin\roslyn\csc.rsp" />
+        <Content Include="bin\roslyn\csi.exe" />
+        <Content Include="bin\roslyn\csi.rsp" />
+        <Content Include="bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll" />
+        <Content Include="bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll" />
+        <Content Include="bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll" />
+        <Content Include="bin\roslyn\Microsoft.CodeAnalysis.dll" />
+        <Content Include="bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll" />
+        <Content Include="bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll" />
+        <Content Include="bin\roslyn\Microsoft.CSharp.Core.targets" />
+        <Content Include="bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll" />
+        <Content Include="bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll" />
+        <Content Include="bin\roslyn\Microsoft.Managed.Core.targets" />
+        <Content Include="bin\roslyn\Microsoft.VisualBasic.Core.targets" />
+        <Content Include="bin\roslyn\System.AppContext.dll" />
+        <Content Include="bin\roslyn\System.Collections.Immutable.dll" />
+        <Content Include="bin\roslyn\System.Console.dll" />
+        <Content Include="bin\roslyn\System.Diagnostics.FileVersionInfo.dll" />
+        <Content Include="bin\roslyn\System.Diagnostics.StackTrace.dll" />
+        <Content Include="bin\roslyn\System.IO.Compression.dll" />
+        <Content Include="bin\roslyn\System.IO.FileSystem.dll" />
+        <Content Include="bin\roslyn\System.IO.FileSystem.Primitives.dll" />
+        <Content Include="bin\roslyn\System.IO.Pipes.AccessControl.dll" />
+        <Content Include="bin\roslyn\System.IO.Pipes.dll" />
+        <Content Include="bin\roslyn\System.Reflection.Metadata.dll" />
+        <Content Include="bin\roslyn\System.Security.AccessControl.dll" />
+        <Content Include="bin\roslyn\System.Security.Claims.dll" />
+        <Content Include="bin\roslyn\System.Security.Cryptography.Algorithms.dll" />
+        <Content Include="bin\roslyn\System.Security.Cryptography.Encoding.dll" />
+        <Content Include="bin\roslyn\System.Security.Cryptography.Primitives.dll" />
+        <Content Include="bin\roslyn\System.Security.Cryptography.X509Certificates.dll" />
+        <Content Include="bin\roslyn\System.Security.Principal.Windows.dll" />
+        <Content Include="bin\roslyn\System.Text.Encoding.CodePages.dll" />
+        <Content Include="bin\roslyn\System.ValueTuple.dll" />
+        <Content Include="bin\roslyn\System.Xml.ReaderWriter.dll" />
+        <Content Include="bin\roslyn\System.Xml.XmlDocument.dll" />
+        <Content Include="bin\roslyn\System.Xml.XPath.dll" />
+        <Content Include="bin\roslyn\System.Xml.XPath.XDocument.dll" />
+        <Content Include="bin\roslyn\vbc.exe" />
+        <Content Include="bin\roslyn\vbc.rsp" />
+        <Content Include="bin\roslyn\VBCSCompiler.exe" />
+        <Content Include="bin\System.Buffers.dll" />
+        <Content Include="bin\System.Buffers.xml" />
+        <Content Include="bin\System.IO.Pipelines.dll" />
+        <Content Include="bin\System.IO.Pipelines.xml" />
+        <Content Include="bin\System.Memory.dll" />
+        <Content Include="bin\System.Memory.xml" />
+        <Content Include="bin\System.Numerics.Vectors.dll" />
+        <Content Include="bin\System.Numerics.Vectors.xml" />
+        <Content Include="bin\System.Runtime.CompilerServices.Unsafe.dll" />
+        <Content Include="bin\System.Runtime.CompilerServices.Unsafe.xml" />
+        <Content Include="bin\System.Threading.Tasks.Extensions.dll" />
+        <Content Include="bin\System.Threading.Tasks.Extensions.xml" />
+        <Content Include="bin\System.Web.Helpers.dll" />
+        <Content Include="bin\System.Web.Helpers.xml" />
+        <Content Include="bin\System.Web.Mvc.dll" />
+        <Content Include="bin\System.Web.Mvc.xml" />
+        <Content Include="bin\System.Web.Optimization.dll" />
+        <Content Include="bin\System.Web.Optimization.xml" />
+        <Content Include="bin\System.Web.Razor.dll" />
+        <Content Include="bin\System.Web.Razor.xml" />
+        <Content Include="bin\System.Web.WebPages.Deployment.dll" />
+        <Content Include="bin\System.Web.WebPages.Deployment.xml" />
+        <Content Include="bin\System.Web.WebPages.dll" />
+        <Content Include="bin\System.Web.WebPages.Razor.dll" />
+        <Content Include="bin\System.Web.WebPages.Razor.xml" />
+        <Content Include="bin\System.Web.WebPages.xml" />
+        <Content Include="bin\WebGrease.dll" />
+        <Content Include="bin\YazOkuluDersler.dll" />
+        <Content Include="bin\YazOkuluDersler.pdb" />
+        <Content Include="bin\ZstdSharp.dll" />
+        <Content Include="DersDetay.aspx" />
         <Content Include="DersKayit.aspx" />
-        <Content Include="KontenjanGuncelle.aspx" />
-        <Content Include="KontenjanListesi.aspx" />
-        <Content Include="KontenjanSil.aspx" />
+        <Content Include="DersTalep.aspx" />
+        <Content Include="DuyuruEkle.aspx" />
+        <Content Include="DuyuruGuncelle.aspx" />
+        <Content Include="Global.asax" />
+        <Content Include="login-styles.css" />
+        <Content Include="Login.aspx" />
+        <Content Include="Logout.aspx" />
+        <Content Include="navbar.css" />
+        <Content Include="obj\Debug\YazOkuluDersler.csproj.AssemblyReference.cache" />
+        <Content Include="obj\Debug\YazOkuluDersler.csproj.CopyComplete" />
+        <Content Include="obj\Debug\YazOkuluDersler.csproj.CoreCompileInputs.cache" />
+        <Content Include="obj\Debug\YazOkuluDersler.csproj.FileListAbsolute.txt" />
+        <Content Include="obj\Debug\YazOkuluDersler.dll" />
+        <Content Include="obj\Debug\YazOkuluDersler.pdb" />
+        <Content Include="obj\Debug\YazOkuluDerslerM.csproj.AssemblyReference.cache" />
+        <Content Include="OgrenciAnaSayfa.aspx" />
+        <Content Include="OgrenciDuyurular.aspx" />
         <Content Include="OgrenciKayit.aspx" />
         <Content Include="DersGuncelle.aspx" />
         <Content Include="DersAta.aspx" />
         <Content Include="DersListesi.aspx" />
-        <Content Include="DersSil.aspx" />
-        <Content Include="MasterPage.master"/>
+        <Content Include="MasterPage.Master" />
         <Content Include="OgrenciGuncelle.aspx" />
-        <Content Include="Default.aspx" />
-        <Content Include="OgrenciSil.aspx" />
-        <Content Include="Web.config"/>
+        <Content Include="OgrenciListesi.aspx" />
+        <Content Include="OgrenciMesajlar.aspx" />
+        <Content Include="OgrenciProfil.aspx" />
+        <Content Include="OgrenciProfilDuzenle.aspx" />
+        <Content Include="OgretmenAnaSayfa.aspx" />
+        <Content Include="OgrenciDerslerim.aspx" />
+        <Content Include="DuyuruYonetimi.aspx" />
+        <None Include="bin\roslyn\csc.exe.config" />
+        <None Include="bin\roslyn\csi.exe.config" />
+        <None Include="bin\roslyn\vbc.exe.config" />
+        <None Include="bin\roslyn\VBCSCompiler.exe.config" />
+        <None Include="Scripts\jquery-3.7.1.intellisense.js" />
+        <Content Include="OgretmenDerslerim.aspx" />
+        <Content Include="OgretmenDetay.aspx" />
+        <Content Include="OgretmenMesajlasma.aspx" />
+        <Content Include="OgretmenProfil.aspx" />
+        <Content Include="OgretmenProfilDuzenle.aspx" />
+        <Content Include="Scripts\jquery-3.7.1.js" />
+        <Content Include="Scripts\jquery-3.7.1.min.js" />
+        <Content Include="Scripts\jquery-3.7.1.slim.js" />
+        <Content Include="Scripts\jquery-3.7.1.slim.min.js" />
+        <Content Include="Scripts\login-animation.js" />
+        <Content Include="styles.css" />
+        <Content Include="System.Web.Extensions.dll" />
+        <Content Include="Web.config" />
         <Content Include="Web.Debug.config">
             <DependentUpon>Web.config</DependentUpon>
         </Content>
@@ -135,24 +273,85 @@
         </Content>
     </ItemGroup>
     <ItemGroup>
-        <None Include="packages.config"/>
+        <None Include="packages.config" />
     </ItemGroup>
     <ItemGroup>
+        <Compile Include="BakiyeYukle.aspx.cs">
+          <SubType>ASPXCodeBehind</SubType>
+          <DependentUpon>BakiyeYukle.aspx</DependentUpon>
+        </Compile>
+        <Compile Include="BakiyeYukle.aspx.designer.cs">
+          <DependentUpon>BakiyeYukle.aspx</DependentUpon>
+        </Compile>
+        <Compile Include="BasvuruListesi.aspx.cs">
+          <SubType>ASPXCodeBehind</SubType>
+          <DependentUpon>BasvuruListesi.aspx</DependentUpon>
+        </Compile>
+        <Compile Include="BasvuruListesi.aspx.designer.cs">
+          <DependentUpon>BasvuruListesi.aspx</DependentUpon>
+        </Compile>
+        <Compile Include="Common.cs" />
+        <Compile Include="DersAta.aspx.designer.cs" />
+        <Compile Include="DersDetay.aspx.cs">
+          <SubType>ASPXCodeBehind</SubType>
+          <DependentUpon>DersDetay.aspx</DependentUpon>
+        </Compile>
+        <Compile Include="DersDetay.aspx.designer.cs">
+          <DependentUpon>DersDetay.aspx</DependentUpon>
+        </Compile>
+        <Compile Include="DersListesi.aspx.designer.cs">
+          <DependentUpon>DersListesi.aspx</DependentUpon>
+        </Compile>
+        <Compile Include="DersTalep.aspx.cs">
+          <SubType>ASPXCodeBehind</SubType>
+          <DependentUpon>DersTalep.aspx</DependentUpon>
+        </Compile>
+        <Compile Include="DersTalep.aspx.designer.cs">
+          <DependentUpon>DersTalep.aspx</DependentUpon>
+        </Compile>
+        <Compile Include="DuyuruEkle.aspx.cs" />
+        <Compile Include="DuyuruEkle.aspx.designer.cs" />
+        <Compile Include="DuyuruGuncelle.aspx.cs" />
+        <Compile Include="DuyuruGuncelle.aspx.designer.cs" />
+        <Compile Include="DuyuruYonetimi.aspx.cs" />
+        <Compile Include="DuyuruYonetimi.aspx.designer.cs" />
+        <Compile Include="Global.asax.cs" />
+        <Compile Include="Logout.aspx.cs">
+          <SubType>ASPXCodeBehind</SubType>
+          <DependentUpon>Logout.aspx</DependentUpon>
+        </Compile>
+        <Compile Include="Logout.aspx.designer.cs">
+          <DependentUpon>Logout.aspx</DependentUpon>
+        </Compile>
+        <Compile Include="obj\Debug\.NETFramework,Version=v4.8.AssemblyAttributes.cs" />
+        <Compile Include="OgrenciDerslerim.aspx.cs">
+          <SubType>ASPXCodeBehind</SubType>
+          <DependentUpon>OgrenciDerslerim.aspx</DependentUpon>
+        </Compile>
+        <Compile Include="OgrenciDerslerim.aspx.designer.cs">
+          <DependentUpon>OgrenciDerslerim.aspx</DependentUpon>
+        </Compile>
+        <Compile Include="OgrenciDuyurular.aspx.cs" />
+        <Compile Include="OgrenciDuyurular.aspx.designer.cs" />
+        <Compile Include="OgrenciGuncelle.aspx.designer.cs" />
+        <Compile Include="OgrenciKayit.aspx.designer.cs" />
+        <Compile Include="OgrenciListesi.aspx.designer.cs">
+          <DependentUpon>OgrenciListesi.aspx</DependentUpon>
+        </Compile>
         <Compile Include="DersKayit.aspx.cs">
           <SubType>ASPXCodeBehind</SubType>
           <DependentUpon>DersKayit.aspx</DependentUpon>
         </Compile>
-        <Compile Include="KontenjanGuncelle.aspx.cs">
+        <Compile Include="Login.aspx.cs" />
+        <Compile Include="Login.aspx.designer.cs" />
+        <Compile Include="MasterPage.Master.cs" />
+        <Compile Include="MasterPage.Master.designer.cs" />
+        <Compile Include="OgrenciAnaSayfa.aspx.cs">
           <SubType>ASPXCodeBehind</SubType>
-          <DependentUpon>KontenjanGuncelle.aspx</DependentUpon>
+          <DependentUpon>OgrenciAnaSayfa.aspx</DependentUpon>
         </Compile>
-        <Compile Include="KontenjanListesi.aspx.cs">
-          <SubType>ASPXCodeBehind</SubType>
-          <DependentUpon>KontenjanListesi.aspx</DependentUpon>
-        </Compile>
-        <Compile Include="KontenjanSil.aspx.cs">
-          <SubType>ASPXCodeBehind</SubType>
-          <DependentUpon>KontenjanSil.aspx</DependentUpon>
+        <Compile Include="OgrenciAnaSayfa.aspx.designer.cs">
+          <DependentUpon>OgrenciAnaSayfa.aspx</DependentUpon>
         </Compile>
         <Compile Include="OgrenciKayit.aspx.cs" />
         <Compile Include="DersGuncelle.aspx.cs">
@@ -167,25 +366,51 @@
           <SubType>ASPXCodeBehind</SubType>
           <DependentUpon>DersListesi.aspx</DependentUpon>
         </Compile>
-        <Compile Include="DersSil.aspx.cs">
-          <SubType>ASPXCodeBehind</SubType>
-          <DependentUpon>DersSil.aspx</DependentUpon>
-        </Compile>
-        <Compile Include="MasterPage.aspx.cs">
-            <SubType>ASPXCodeBehind</SubType>
-            <DependentUpon>MasterPage.master</DependentUpon>
-        </Compile>
         <Compile Include="OgrenciGuncelle.aspx.cs">
           <SubType>ASPXCodeBehind</SubType>
           <DependentUpon>OgrenciGuncelle.aspx</DependentUpon>
         </Compile>
-        <Compile Include="Default.aspx.cs">
+        <Compile Include="OgrenciListesi.aspx.cs">
           <SubType>ASPXCodeBehind</SubType>
-          <DependentUpon>Default.aspx</DependentUpon>
+          <DependentUpon>OgrenciListesi.aspx</DependentUpon>
         </Compile>
-        <Compile Include="OgrenciSil.aspx.cs">
+        <Compile Include="OgrenciMesajlar.aspx.cs" />
+        <Compile Include="OgrenciMesajlar.aspx.designer.cs" />
+        <Compile Include="OgrenciProfil.aspx.cs">
           <SubType>ASPXCodeBehind</SubType>
-          <DependentUpon>OgrenciSil.aspx</DependentUpon>
+          <DependentUpon>OgrenciProfil.aspx</DependentUpon>
+        </Compile>
+        <Compile Include="OgrenciProfil.aspx.designer.cs">
+          <DependentUpon>OgrenciProfil.aspx</DependentUpon>
+        </Compile>
+        <Compile Include="OgrenciProfilDuzenle.aspx.cs">
+          <SubType>ASPXCodeBehind</SubType>
+          <DependentUpon>OgrenciProfilDuzenle.aspx</DependentUpon>
+        </Compile>
+        <Compile Include="OgrenciProfilDuzenle.aspx.designer.cs">
+          <DependentUpon>OgrenciProfilDuzenle.aspx</DependentUpon>
+        </Compile>
+        <Compile Include="OgretmenAnaSayfa.aspx.cs" />
+        <Compile Include="OgretmenAnaSayfa.aspx.designer.cs" />
+        <Compile Include="OgretmenDerslerim.aspx.cs" />
+        <Compile Include="OgretmenDerslerim.aspx.designer.cs" />
+        <Compile Include="OgretmenDetay.aspx.cs" />
+        <Compile Include="OgretmenDetay.aspx.designer.cs" />
+        <Compile Include="OgretmenMesajlasma.aspx.cs" />
+        <Compile Include="OgretmenMesajlasma.aspx.designer.cs" />
+        <Compile Include="OgretmenProfil.aspx.cs">
+          <SubType>ASPXCodeBehind</SubType>
+          <DependentUpon>OgretmenProfil.aspx</DependentUpon>
+        </Compile>
+        <Compile Include="OgretmenProfil.aspx.designer.cs">
+          <DependentUpon>OgretmenProfil.aspx</DependentUpon>
+        </Compile>
+        <Compile Include="OgretmenProfilDuzenle.aspx.cs">
+          <SubType>ASPXCodeBehind</SubType>
+          <DependentUpon>OgretmenProfilDuzenle.aspx</DependentUpon>
+        </Compile>
+        <Compile Include="OgretmenProfilDuzenle.aspx.designer.cs">
+          <DependentUpon>OgretmenProfilDuzenle.aspx</DependentUpon>
         </Compile>
     </ItemGroup>
     <ItemGroup>
@@ -201,6 +426,9 @@
             <Project>{47fcb043-9a75-41c1-bf7f-add241ff114a}</Project>
             <Name>EntityLayer</Name>
         </ProjectReference>
+    </ItemGroup>
+    <ItemGroup>
+      <Folder Include="OgrenciFotograflari\" />
     </ItemGroup>
     <PropertyGroup>
         <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

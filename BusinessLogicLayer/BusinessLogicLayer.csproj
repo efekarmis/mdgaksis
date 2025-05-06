@@ -37,12 +37,16 @@
         <Reference Include="System.Core"/>
         <Reference Include="System.Data"/>
         <Reference Include="System.Net.Http.WebRequest" />
+        <Reference Include="System.Transactions" />
         <Reference Include="System.Web.Http" />
         <Reference Include="System.Xml"/>
     </ItemGroup>
     <ItemGroup>
-        <Compile Include="BLLDersler.cs" />
-        <Compile Include="BLLKontenjanlar.cs" />
+        <Compile Include="BLLBasvuru.cs" />
+        <Compile Include="BLLDers.cs" />
+        <Compile Include="BLLDuyuru.cs" />
+        <Compile Include="BLLKullanici.cs" />
+        <Compile Include="BLLMesaj.cs" />
         <Compile Include="BLLOgrenci.cs"/>
         <Compile Include="BLLOgretmen.cs" />
         <Compile Include="Properties\AssemblyInfo.cs"/>
