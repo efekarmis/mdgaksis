@@ -1,7 +1,7 @@
 /* === YENİ NAVBAR STİLİ === */
 :root{
-    --app-navbar-secondarycolor: #fb2;
-    --app-navbar-oldsecondary-color: #ffd369;
+    --app-navbar-secondarycolor: #ffcc01; /*fb2  ffd369*/  
+    --app-navbar-oldsecondary-color: #ffd369; /*fddb3a*/
     --app-navbar-fontcolor: #f6f4e6;
 } 
 /*#fddb3a*/

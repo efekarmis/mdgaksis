@@ -1,9 +1,0 @@
-/Users/efe/RiderProjects/YazOkuluDersler/DataAccessLayer/bin/Debug/DataAccessLayer.dll
-/Users/efe/RiderProjects/YazOkuluDersler/DataAccessLayer/bin/Debug/DataAccessLayer.pdb
-/Users/efe/RiderProjects/YazOkuluDersler/DataAccessLayer/bin/Debug/EntityLayer.dll
-/Users/efe/RiderProjects/YazOkuluDersler/DataAccessLayer/bin/Debug/EntityLayer.pdb
-/Users/efe/RiderProjects/YazOkuluDersler/DataAccessLayer/obj/Debug/DataAccessLayer.csproj.AssemblyReference.cache
-/Users/efe/RiderProjects/YazOkuluDersler/DataAccessLayer/obj/Debug/DataAccessLayer.csproj.CoreCompileInputs.cache
-/Users/efe/RiderProjects/YazOkuluDersler/DataAccessLayer/obj/Debug/DataAccessLayer.csproj.CopyComplete
-/Users/efe/RiderProjects/YazOkuluDersler/DataAccessLayer/obj/Debug/DataAccessLayer.dll
-/Users/efe/RiderProjects/YazOkuluDersler/DataAccessLayer/obj/Debug/DataAccessLayer.pdb

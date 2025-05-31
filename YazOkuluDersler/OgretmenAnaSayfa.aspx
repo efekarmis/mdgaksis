@@ -2,23 +2,36 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
     <div id="teacherDashboard" class="dashboard-container">
+        <div id="profileCardActions" class="col-md-5">
+            <div id="profileCard" class="profile-card" runat="server">
+                <asp:Image ID="imgOgretmenFoto" runat="server"
+                    CssClass="profile-photo"
+                    Width="120px"
+                    Height="120px"
+                    AlternateText="Öğretmen Fotoğrafı"
+                    ImageUrl="~/OgretmenFotograflari/default_teacher.png" />
 
-        <div id="profileCard" class="profile-card" runat="server">
-            <asp:Image ID="imgOgretmenFoto" runat="server"
-                CssClass="profile-photo"
-                Width="120px"
-                Height="120px"
-                AlternateText="Öğretmen Fotoğrafı"
-                ImageUrl="~/OgretmenFotograflari/default_teacher.png" />
-
-            <div id="profileDetails" class="profile-text-details" runat="server">
+                <div id="profileDetails" class="profile-text-details" runat="server">
+                </div>
+            </div>
+            
+            <div id="dashboardActions" class="dashboard-actions">
+                <div class="dashboard-buttons">
+                    <a href="DersListesi.aspx" class="dashboard-button">Ders Listesi</a>
+                    <a href="OgretmenDerslerim.aspx" class="dashboard-button">Derslerim</a>
+                    <a href="DersKayit.aspx" class="dashboard-button">Ders Kaydı</a>
+                    <%-- <a href="DersAta.aspx" class="dashboard-button">Ders Atama</a> --%>
+                    <a href="OgrenciListesi.aspx" class="dashboard-button">Öğrenci Listesi</a>
+                    <a href="BasvuruListesi.aspx" class="dashboard-button">Başvuru Listesi</a>
+                    <a href="OgretmenProfil.aspx" class="dashboard-button btn-secondary">Profilim</a>
+                </div>
             </div>
         </div>
-
-        <div class="card card-common mb-4 shadow-sm">
+        
+        <div class="card card-common col-md-7 shadow-sm">
             <div class="card-header bg-light border-bottom">
                 <h4 class="mb-0 fw-semibold">
-                    <span class="glyphicon glyphicon-bullhorn text-primary me-2"></span>Güncel Duyurular
+                    <span style="color: var(--app-navbar-secondarycolor)" class="glyphicon glyphicon-bullhorn text-primary mr-2"></span>Güncel Duyurular
                 </h4>
             </div>
             <div class="card-body announcement-list-body">
@@ -52,20 +65,6 @@
                         <% } %>
                     </FooterTemplate>
                 </asp:Repeater>
-            </div>
-        </div>
-
-
-        <div id="dashboardActions" class="dashboard-actions">
-            <h3>Hızlı İşlemler</h3>
-            <div class="dashboard-buttons">
-                <a href="DersListesi.aspx" class="dashboard-button">Ders Listesi</a>
-                <a href="OgretmenDerslerim.aspx" class="dashboard-button">Derslerim</a>
-                <a href="DersKayit.aspx" class="dashboard-button">Ders Kaydı</a>
-                <a href="DersAta.aspx" class="dashboard-button">Ders Atama</a>
-                <a href="OgrenciListesi.aspx" class="dashboard-button">Öğrenci Listesi</a>
-                <a href="BasvuruListesi.aspx" class="dashboard-button">Başvuru Listesi</a>
-                <a href="OgretmenProfil.aspx" class="dashboard-button btn-secondary">Profilim</a>
             </div>
         </div>
     </div>

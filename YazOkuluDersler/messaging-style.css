@@ -1,0 +1,306 @@
+/* ÖĞRENCİ MESAJLAMA KISMI */
+.mesajlasma-container {
+    display: flex;
+    height: calc(100vh - 120px);
+    overflow: hidden;
+    background-color: var(--app-content-bg); /* Karanlık tema arka planı */
+    padding: 1.5em;
+    border: 1.5px solid var(--app-content-border-color); /* İnce sınır */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Hafif gölge */
+    border-radius: 15px;
+}
+
+.ders-listesi-panel {
+    width: 300px;
+    border-right: 1px solid var(--app-content-border-color); /* İnce sınır */
+    display: flex;
+    flex-direction: column;
+    background-color: var(--app-navbar-color-dark); /* Karanlık tema panel arka planı */
+    flex-shrink: 0;
+}
+
+.ders-liste-baslik {
+    flex-shrink: 0;
+    background-color: var(--app-content-bg); /* Başlık arka planı */
+    color: var(--app-content-heading-color); /* Başlık metin rengi */
+}
+.ders-liste-baslik h5{
+    vertical-align: middle;
+}
+.ders-liste-baslik .glyphicon{
+    margin-right: 0.5em;
+    vertical-align: top;
+    font-size: 1.15em;
+}
+
+.ders-liste-icerik {
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+.ders-list-item {
+    display: block;
+    text-decoration: none;
+    color: var(--app-content-font-color); /* Varsayılan metin rengi */
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease; /* Daha yumuşak geçiş */
+    width: 95%;
+    text-align: left;
+    background: none;
+    border: none;
+    border-radius: 0.25rem; /* Hover border-radius */
+    
+}
+
+.ders-list-item:hover {
+    background-color: var(--app-content-hover-bg); /* Hover arka planı */
+    text-decoration: none;
+    color: var(--app-content-heading-color); /* Hover metin rengi */
+    box-shadow: inset 0 0 0 1px var(--app-content-border-color); /* Hover sınır */
+}
+
+.ders-list-item.active {
+    background-color: var(--app-content-hover-bg); /* Hover arka planı */
+    color: var(--app-white) !important; /* Aktif öğe metin rengi */
+}
+
+.ders-list-item.active .ders-list-ad {
+    color: var(--app-white); /* Aktif öğe başlık rengi */
+}
+
+.ders-list-ad {
+    font-size: 0.95rem;
+}
+
+.mesajlasma-alani {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--app-content-bg); /* Mesajlaşma alanı arka planı */
+    height: 100%;
+}
+
+.mesaj-alani-bos {
+    background-color: var(--app-navbar-color-dark); /* Boş alan arka planı */
+    color: var(--app-content-muted-color); /* Soluk metin rengi */
+}
+
+.mesaj-alani-dolu {
+    background-color: var(--app-content-bg); /* Dolu alan arka planı */
+}
+
+.mesaj-baslik {
+    flex-shrink: 0;
+    min-height: 62px;
+    display: flex;
+    align-items: center;
+    background-color: var(--app-navbar-color-dark); /* Başlık arka planı */
+    color: var(--app-content-heading-color); /* Başlık metin rengi */
+}
+
+.mesaj-baslik h5 {
+    line-height: 1.3;
+    margin-left: 0.75rem;
+}
+
+.mesaj-akisi-container {
+    background-color: var(--app-content-bg); /* Mesaj akışı arka planı */
+    flex-grow: 1;
+    height: 64vh;
+    width: 74vw;
+}
+
+/* ÖĞRENCİMESAJ SCROLLBAR START*/
+
+.mesaj-akisi-container::-webkit-scrollbar,
+.ders-liste-icerik::-webkit-scrollbar {
+    width: 8px;
+}
+
+.mesaj-akisi-container::-webkit-scrollbar-track,
+.ders-liste-icerik::-webkit-scrollbar-track {
+    background: var(--app-content-bg);
+    border-radius: 4px;
+}
+
+.mesaj-akisi-container::-webkit-scrollbar-thumb,
+.ders-liste-icerik::-webkit-scrollbar-thumb {
+    background-color: var(--app-secondary-dark);
+    border-radius: 4px;
+    border: 2px solid var(--app-content-bg);
+}
+
+.mesaj-akisi-container::-webkit-scrollbar-thumb:hover,
+.ders-liste-icerik::-webkit-scrollbar-thumb:hover {
+    background-color: var(--app-navbar-secondarycolor);
+}
+/* ÖĞRENCİMESAJ SCROLLBAR FINISH*/
+
+.message-item {
+    display: flex;
+    max-width: 75%;
+    margin-bottom: 0.75rem !important;
+}
+
+.message-bubble {
+    border-radius: 18px;
+    padding: 0.6rem 1rem;
+    word-wrap: break-word;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    max-width: 100%;
+    color: var(--app-content-font-color); /* Mesaj metin rengi */
+}
+
+.message-sender-info {
+    margin-bottom: 0.25rem;
+    color: var(--app-content-muted-color); /* Gönderen bilgisi rengi */
+}
+
+.message-sender {
+    font-weight: 600;
+    color: var(--app-content-heading-color); /* Gönderen adı rengi */
+}
+
+.message-time {
+    font-size: 0.75em;
+    color: var(--app-content-muted-color); /* Zaman bilgisi rengi */
+}
+
+/* Gönderilen Mesaj (ÖĞRENCİ) */
+.message-sent {
+    margin-left: auto;
+    flex-direction: row-reverse;
+}
+
+.message-sent .message-bubble {
+    background-color: var(--app-success); /* Gönderilen mesaj arka planı */
+    border-bottom-right-radius: 5px;
+    color: var(--app-white); /* Mesaj metin rengi */
+}
+
+/* Alınan Mesaj (Öğretmen/Diğer) */
+.message-received {
+    justify-content: flex-start;
+    margin-right: auto;
+}
+
+.message-received .message-bubble {
+    background-color: var(--app-navbar-color-dark); /* Alınan mesaj arka planı */
+    border: 1px solid var(--app-content-border-color); /* Mesaj sınırı */
+    border-bottom-left-radius: 5px;
+}
+
+#txtMesajIcerik.ClientID {
+    min-height: 40px;
+    transition: height 0.2s ease;
+}
+
+.mesaj-gonderme-alani {
+    flex-shrink: 0;
+    background-color: var(--app-navbar-color-dark); /* Gönderme alanı arka planı */
+    margin-top: 1rem;
+}
+
+.mesaj-gonderme-alani .input-group {
+    background-color: var(--app-navbar-color-dark); /* Girdi alanı arka planı */
+    border-radius: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem;
+}
+
+.mesaj-gonderme-alani .form-control {
+    border: none;
+    box-shadow: none;
+    border-radius: 1.6rem !important;
+    padding-left: 1.25rem;
+    height: auto;
+    background-color: var(--app-content-bg); /* Girdi arka planı */
+    color: var(--app-content-font-color); /* Girdi metin rengi */
+    font-size: 0.95rem; /* Girdi metin boyutu */
+    transition: box-shadow 0.2s ease; /* Odaklanma geçişi */
+    width: 94%; /* Girdi genişliği */
+}
+
+.mesaj-gonderme-alani .form-control:focus {
+    box-shadow: 0 0 0 3px rgba(var(--app-primary-rgb), 0.3); /* Odak gölgesi */
+    border: none;
+}
+
+.mesaj-gonderme-alani .btn {
+    height: 3rem; /* Sabit buton yüksekliği */
+    width: 3rem; /* Sabit buton genişliği */
+    padding: 8px;
+    padding-right: 12px;
+    background-color: var(--app-content-bg); /* Gönder butonu arka planı */
+    color: var(--app-navbar-fontcolor); /* Gönder butonu metin rengi */
+    border: none; /* Kenarlık kaldırıldı */
+    border-radius: 50%; /* Tam yuvarlak buton */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Hafif gölge */
+    display: flex; /* İçerik hizalaması için flex kullanıldı */
+    align-items: center; /* Dikey hizalama */
+    justify-content: center; /* Yatay hizalama */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Hover geçişleri */
+}
+
+.mesaj-gonderme-alani .btn:hover {
+    background-color: var(--app-allpage-color-dark); /* Hover arka plan rengi */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Hover gölge */
+    cursor: pointer; /* Fare işaretçisi */
+}
+
+.mesaj-gonderme-alani .btn:active {
+    background-color: var(--app-); /* Aktif durum arka plan rengi */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Aktif durum gölge */
+}
+
+.close {
+    float: right;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1;
+    color: var(--app-content-muted-color); /* Kapat butonu rengi */
+    text-shadow: 0 1px 0 var(--app-content-bg);
+    opacity: .5;
+    background-color: transparent;
+    border: 0;
+}
+
+.close:hover {
+    opacity: .75;
+}
+
+.alert-dismissible .close {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 0 0.75rem;
+    color: inherit;
+    right: 0;
+}
+
+/* Mesajlaşma Alanı - Gönderen Fotoğraf Stili */
+.message-sender-pic {
+    width: 35px; /* Fotoğraf boyutu */
+    height: 35px;
+    border-radius: 50%; /* Tam yuvarlak */
+    object-fit: cover; /* Resmi kırparak sığdır */
+    border: 1px solid var(--app-content-border-color); /* İnce çerçeve */
+    background-color: var(--app-secondary-dark); /* Resim yokkenki arka plan */
+    vertical-align: top; /* Üst hizaya yasla (bubble ile daha iyi durabilir) */
+    margin-right: 0.30rem !important;
+    margin-left: 0.50rem !important;
+}
+
+.message-sent .message-sender-pic {
+    margin-left: 0.30rem !important; /* Sağdaki fotoğraf ile balon arasındaki boşluk */
+    margin-right: 0.50rem !important; /* Soldaki boşluğu kaldır */
+}
+
+/* Fotoğrafın yanındaki mesaj balonunun dikey hizalamasını ayarlamak için */
+.message-item {
+    align-items: flex-start; /* Öğeleri (foto+balon) yukarı hizala */
+}
+
+/* ÖĞRENCİ MESAJLAMA KISMI BİTTİ */

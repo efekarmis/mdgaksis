@@ -2,9 +2,9 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
     <div class="container-fluid">
-        <h2>Ders Seçimi ve Talep</h2>
+        <h3>Ders Seçimi ve Talep</h3>
         <p class="text-muted">Aşağıdaki listeden almak istediğiniz dersleri inceleyebilir ve başvuru yapabilirsiniz.</p>
-        <hr />
+        <hr/>
 
         <asp:PlaceHolder ID="phMesaj" runat="server" Visible="false">
             <div id="divMesaj" class="alert" runat="server">
@@ -12,7 +12,7 @@
             </div>
         </asp:PlaceHolder>
 
-        <div class="table-responsive">
+        <div class="table-container">
             <table class="table table-bordered table-hover align-middle">
                 <thead class="table-light">
                     <tr>

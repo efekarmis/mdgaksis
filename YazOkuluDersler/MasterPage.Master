@@ -12,7 +12,9 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="styles.css">
     <link rel="stylesheet" type="text/css" href="navbar.css">
-    
+    <link rel="stylesheet" type="text/css" href="messaging-style.css">
+
+    <script src="Scripts/script.js"></script>
 </head>
 <body>
     <form id="formMaster" runat="server">

@@ -19,7 +19,7 @@
             </asp:HyperLink>
         </div>
 
-        <div class="table-responsive">
+        <div class="table-container">
             <table class="table table-bordered table-hover align-middle">
                 <thead class="table-light">
                     <tr>
@@ -44,7 +44,7 @@
                                     ImageUrl='<%# ResolveUrl( Eval("FOTOGRAF") == null || string.IsNullOrEmpty(Eval("FOTOGRAF").ToString()) ? "~/OgrenciFotograflari/default.png" : "~/OgrenciFotograflari/" + Eval("FOTOGRAF")) %>'
                                     AlternateText='<%# Eval("AD") + " " + Eval("SOYAD") %>'
                                     CssClass="img-thumbnail rounded-circle"
-                                    style="height: 50px; width: 50px; object-fit: cover;" />
+                                    style="height: 50px; width: 50px; object-fit: cover; border-radius: 50%; padding: 0 !important; border: 1px solid var(--app-navbar-secondarycolor);" />
                             </td>
                             <td><%# Eval("AD") %></td>
                             <td><%# Eval("SOYAD") %></td>

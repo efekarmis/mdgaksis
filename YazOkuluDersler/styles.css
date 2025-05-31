@@ -3,8 +3,8 @@
 /* 2. Temel Değişkenler */
 :root {
     /* Renkler */
-    --app-primary: #3498db;
-    --app-primary-dark: #2980b9;
+    --app-primary: #1D267D;
+    --app-primary-dark: #1D267D;
     --app-secondary: #6c757d;
     --app-secondary-dark: #5a6268;
     --app-navbar-color-dark: #272727; /* Kart/İçerik Arka Planı */
@@ -18,8 +18,8 @@
     /* --app-muted: #6c757d; /* Açık tema soluk rengi */
     --app-danger: #CF6679; /*#b00020*/
     --app-danger-dark: #c0392b;
-    --app-success: #2ecc71;
-    --app-success-dark: #27ae60;
+    --app-success: #005B41;
+    --app-success-dark: #005B41;
 
     /* RGB Versiyonlar (Focus için - Gerekirse ayarlanabilir) */
     --app-primary-rgb: 52, 152, 219;
@@ -82,7 +82,7 @@ body {
     line-height: var(--app-line-height-base);
     /* Ana metin rengini artık kart içinde belirliyoruz */
     /* color: var(--app-body-color); */
-    background-color: var(--app-body-bg); /* Sayfa geneli arka planı */
+    background-color: var(--app-body-bg) !important; /* Sayfa geneli arka planı */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     color: var(--app-content-font-color); /* Varsayılan metin rengini açık yapalım */
@@ -95,6 +95,7 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--app-navbar-fontcolor); /* Başlıklar daha parlak */
     margin-bottom: 0.75rem;
     line-height: 1.3;
+    margin-top: 0px !important;
 }
 /* Boyutlar aynı kalabilir */
 h1 { font-size: 2.25rem; }
@@ -143,43 +144,170 @@ a:focus-visible {
 }
 /* Diğer butonlar (.btn-primary, .btn-success, .btn-danger) genellikle iyi görünür */
 
+/* ALERT */
+
+/* Alert mesajlarını sağ üst köşeye yerleştirme */
+.alert {
+    position: absolute;
+    top: 70px; /* Navbar yüksekliğine göre ayarlayın */
+    right: 20px;
+    z-index: 1050; /* Üstte görünmesi için yüksek bir z-index */
+    width: auto; /* Genişlik içeriğe göre ayarlanır */
+    max-width: 300px; /* Maksimum genişlik */
+    box-shadow: var(--app-shadow-md); /* Hafif gölge efekti */
+}
 
 /* --- Tablolar --- */
 /* Tablolar karanlık tema için güncellenmeli */
+
+/*.table {*/
+/*    width: 100%;*/
+/*    margin-bottom: 1.5rem;*/
+/*    color: var(--app-content-font-color); !* Tablo metni *!*/
+/*    font-size: 0.9rem;*/
+/*    border-collapse: collapse;*/
+/*    background-color: var(--app-content-bg); !* Tablo arka planı *!*/
+/*    border: 1px solid var(--app-content-border-color); !* Dış çerçeve *!*/
+/*}*/
+
+/*.table th, .table td {*/
+/*    padding: 0.8rem 1rem;*/
+/*    vertical-align: middle !important;*/
+/*    border-top: 1px solid var(--app-content-border-color); !* Hücre ayırıcı *!*/
+/*    text-align: left;*/
+/*}*/
+
+/*.table thead th {*/
+/*    font-family: var(--app-font-heading);*/
+/*    font-weight: var(--app-font-weight-semibold);*/
+/*    color: var(--app-content-heading-color); !* Başlık metni *!*/
+/*    background-color: rgba(255, 255, 255, 0.08); !* Başlık arka planı (hafif farklı) *!*/
+/*    border-bottom: 2px solid var(--app-content-border-color); !* Kalın alt çizgi *!*/
+/*    border-top: none;*/
+/*    font-size: 0.8rem;*/
+/*    text-transform: uppercase;*/
+/*    letter-spacing: 0.5px;*/
+/*}*/
+
+/*.table-hover tbody tr:hover {*/
+/*    color: var(--app-content-heading-color); !* Hover metin rengi *!*/
+/*    background-color: var(--app-content-hover-bg); !* Hover arka plan *!*/
+/*}*/
+/*!* Table td içindeki butonlar için stil aynı kalabilir *!*/
+/* Tablo Kapsayıcı */
+.table-container {
+    max-height: 60vh; /* Sayfanın %60'ını kaplasın */
+    overflow-y: auto; /* İçerik için dikey kaydırma */
+    margin-bottom: 1.5rem; /* Alt boşluk */
+    border-radius: var(--app-border-radius-lg); /* Kenar yumuşatma */
+    box-shadow: var(--app-shadow-md); /* Hafif gölge */
+    border: 1px solid var(--app-content-border-color); /* Sınır */
+}
+
+/* Tablo */
 .table {
-    width: 100%;
-    margin-bottom: 1.5rem;
-    color: var(--app-content-font-color); /* Tablo metni */
-    font-size: 0.9rem;
-    border-collapse: collapse;
-    background-color: var(--app-content-bg); /* Tablo arka planı */
-    border: 1px solid var(--app-content-border-color); /* Dış çerçeve */
+    border-radius: var(--app-border-radius-lg); /* Tablo kenarları */
+    overflow: hidden; /* Kenar taşmalarını gizle */
 }
-
-.table th, .table td {
-    padding: 0.8rem 1rem;
-    vertical-align: middle !important;
-    border-top: 1px solid var(--app-content-border-color); /* Hücre ayırıcı */
-    text-align: left;
+.table-hover tbody tr{
+    background-color: var(--app-allpage-color-dark) !important;
+    
 }
-
-.table thead th {
-    font-family: var(--app-font-heading);
-    font-weight: var(--app-font-weight-semibold);
-    color: var(--app-content-heading-color); /* Başlık metni */
-    background-color: rgba(255, 255, 255, 0.08); /* Başlık arka planı (hafif farklı) */
-    border-bottom: 2px solid var(--app-content-border-color); /* Kalın alt çizgi */
-    border-top: none;
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
 .table-hover tbody tr:hover {
-    color: var(--app-content-heading-color); /* Hover metin rengi */
-    background-color: var(--app-content-hover-bg); /* Hover arka plan */
+    background-color: var(--app-content-hover-bg); /* Hafif gri arka plan */
+    color: var(--app-content-heading-color); /* Metin rengi parlak beyaz */
+    transition: background-color 0.2s ease-in-out;
 }
-/* Table td içindeki butonlar için stil aynı kalabilir */
+/* Tablo Başlık */
+.table thead th {
+    border-top-left-radius: var(--app-border-radius-lg); /* Sol üst köşe */
+    border-top-right-radius: var(--app-border-radius-lg); /* Sağ üst köşe */
+    background-color: var(--app-allpage-color-dark) !important;
+}
+/* styles.css dosyanıza eklenecek kod */
+
+/* Tablo Hücre İçeriklerini Dikey Ortalama */
+.table th,
+.table td {
+    vertical-align: middle !important;
+}
+.table a {
+    color: var(--app-navbar-secondarycolor); /* Varsayılan metin rengi */
+    text-decoration: none; /* Alt çizgiyi kaldır */
+    transition: color var(--app-transition-fast); /* Geçiş efekti */
+}
+
+.table a:hover {
+    color: var(--app-navbar-oldsecondary-color); /* Hover durumunda mavi */
+    text-decoration: underline; /* Hover durumunda alt çizgi */
+}
+/* Scrollbar Stilleri (Opsiyonel) */
+.table-container::-webkit-scrollbar {
+    width: 8px;
+}
+.table-container::-webkit-scrollbar-track {
+    background: var(--app-content-bg);
+    border-radius: 4px;
+}
+.table-container::-webkit-scrollbar-thumb {
+    background-color: var(--app-secondary-dark);
+    border-radius: 4px;
+    border: 2px solid var(--app-content-bg);
+}
+.table-container::-webkit-scrollbar-thumb:hover {
+    background-color: var(--app-navbar-secondarycolor);
+}
+
+/* --- Tabloların içinde kullanılan butonlar için olan kısım --- */
+/* Tablo İçindeki Butonlar için Genel Stil */
+.table .btn {
+    padding: 0.375rem 0.75rem;
+    font-size: 0.875rem;
+    border-radius: var(--app-border-radius-lg); /* Daha yumuşak kenarlar için -lg kullandık (0.5rem) */
+    border-width: 1px;
+    border-style: solid;
+    transition: background-color var(--app-transition-fast), border-color var(--app-transition-fast), color var(--app-transition-fast);
+    line-height: 1.5;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+/* Tablo İçindeki Başarı Butonu (btn-success) */
+.table .btn.btn-success {
+    background-color: var(--app-navbar-color-dark);
+    border-color: var(--app-success-dark);
+    color: var(--app-white); /* Beyaz metin */
+}
+
+.table .btn.btn-success:hover,
+.table .btn.btn-success:focus {
+    background-color: var(--app-success-dark);
+    border-color: var(--app-navbar-color-dark); /* Tanımlı koyu renk kullanıldı */
+    color: var(--app-white);
+}
+
+/* Tablo İçindeki Bilgi Butonu (btn-info) - Tema birincil renkleri ile güncellendi */
+.table .btn.btn-info {
+    background-color: var(--app-primary); /* Tema birincil rengi */
+    border-color: var(--app-navbar-color-dark); /* Tema birincil koyu rengi */
+    color: var(--app-white); /* Beyaz metin */
+    text-decoration: none; /* Normal durumda da alt çizgi olmasın */
+}
+
+.table .btn.btn-info:hover,
+.table .btn.btn-info:focus {
+    background-color: var(--app-navbar-color-dark);
+    border-color: var(--app-primary-dark);
+    color: var(--app-white);
+    text-decoration: none; /* Üzerine gelindiğinde ve odaklanıldığında alt çizgiyi kaldır */
+}
+
+/* Buton içindeki ikonlar için ek stil (isteğe bağlı) */
+.table .btn .glyphicon {
+    font-size: 0.9em;
+    /* Renk butondan miras alınır */
+}
 
 
 /* --- Form Elemanları --- */
@@ -250,8 +378,9 @@ textarea.form-control {
 /* --- Select (Dropdown) --- */
 select.form-control {
     /* ... appearance stilleri ... */
-    /* SVG ikonunun rengini açık yapmak için stroke değerini değiştir */
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23e0e0e0' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+    /* SVG ikonunun rengini açık yapmak için stroke değerini değiştir 
+    */
+    font-size: 12px;
     background-color: var(--app-navbar-color-dark);
     color: var(--app-content-font-color);
     border: 1px solid var(--app-content-border-color);
@@ -430,6 +559,8 @@ select.form-control {
 .card.card-common.duyuru-paneli {
     /* card-common stilleri geçerli */
     padding: 0; /* İç padding'i kaldıralım, header ve body'ye verelim */
+    max-height: 60vh;
+    overflow-y: auto;
 }
 
 /* Kart Başlığı */
@@ -551,8 +682,165 @@ select.form-control {
     display: block;
 }
 
+/* BAKİYE YÜKLE SAYFASI İÇİN ÖZELLEŞTİRME */
 
+/* styles.css */
+.bakiye-yukle-page .login-card {
+    max-width: 600px;
+    margin: 30px auto;
+    text-align: left;
+    background-color: var(--app-navbar-color-dark); /* Arka plan rengi */
+    border: 1px solid #ddd; /* Çerçeve */
+    border-radius: 8px; /* Köşeleri yuvarla */
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Hafif gölge */
+}
+
+.bakiye-yukle-page h3, h4 {
+    color: var(--app-content-font-color);
+    margin-bottom: 15px;
+}
+
+.bakiye-yukle-page .form-group label {
+    font-weight: bold;
+    color: #555;
+}
+
+.bakiye-yukle-page .btn-success {
+    background-color: #28a745;
+    border-color: #28a745;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+}
+
+.bakiye-yukle-page .alert-danger {
+    margin-top: 20px;
+    font-size: 0.9rem;
+}
+
+.bakiye-yukle-page .btn {
+    padding: 0.375rem 0.75rem;
+    font-size: 0.875rem;
+    border-radius: var(--app-border-radius-lg); /* Daha yumuşak kenarlar için -lg kullandık (0.5rem) */
+    border-width: 1px;
+    border-style: solid;
+    transition: background-color var(--app-transition-fast), border-color var(--app-transition-fast), color var(--app-transition-fast);
+    line-height: 1.5;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+/* Tablo İçindeki Başarı Butonu (btn-success) */
+.bakiye-yukle-page .btn.btn-success {
+    background-color: var(--app-success-dark);
+    border-color: var(--app-navbar-color-dark); /* Tanımlı koyu renk kullanıldı */
+    color: var(--app-white); /* Beyaz metin */
+}
+
+.bakiye-yukle-page .btn.btn-success:hover,
+.bakiye-yukle-page .btn.btn-success:focus {
+    background-color: var(--app-navbar-color-dark);
+    border-color: var(--app-success-dark);
+    color: var(--app-white);
+}
+/*ÖĞRENCİ DUYURULAR*/
+.duyuru-baslik h2 {
+    font-size: 1.5rem;
+    color: var(--app-content-heading-color); /* Parlak başlık */
+    vertical-align: middle;
+}
+.duyuru-baslik .glyphicon {
+    font-size: 0.8em;
+    color: var(--app-navbar-secondarycolor); /* İkon rengi */
+    margin-right: 8px;
+}
+.duyuru-item-container {
+    max-height: 68vh; /* Yükseklik sınırı */
+    overflow-y: auto; /* Dikey kaydırma */
+    padding-right: 10px; /* Scrollbar için boşluk */
+}
+
+/* Scrollbar stilleri (isteğe bağlı) */
+.duyuru-item-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.duyuru-item-container::-webkit-scrollbar-track {
+    background: var(--app-content-bg);
+    border-radius: 4px;
+}
+
+.duyuru-item-container::-webkit-scrollbar-thumb {
+    background-color: var(--app-secondary-dark);
+    border-radius: 4px;
+    border: 2px solid var(--app-content-bg);
+}
+
+.duyuru-item-container::-webkit-scrollbar-thumb:hover {
+    background-color: var(--app-navbar-secondarycolor);
+}
+
+
+.duyuru-item-detay {
+    position: relative;
+    border-left: 5px solid #adb5bd; /* Varsayılan gri kenar */
+    transition: box-shadow 0.2s ease-in-out;
+}
+
+.duyuru-item-detay:hover {
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.10) !important;
+}
+
+.duyuru-onemli-detay {
+    border-left-color: #dc3545 !important; /* Önemli için kırmızı kenar */
+}
+
+.duyuru-meta {
+    font-size: 0.9em;
+}
+
+.duyuru-icerik-tam {
+    line-height: 1.7;
+    font-size: 1rem;
+}
 /* 8. Yardımcı Classlar (Aynı kalabilir) */
+
+/* Sayfanın belli kısmında yazılmış list-group elemanları için yazılmış table benzeri design kalıbı */
+
+.list-group {
+    border: 1px solid var(--app-content-border-color); /* Dış sınır */
+    border-radius: var(--app-border-radius-lg); /* Kenar yumuşatma */
+    box-shadow: var(--app-shadow-md); /* Hafif gölge */
+    overflow: hidden; /* Kenar taşmalarını gizle */
+    background-color: var(--app-content-bg); /* Arka plan rengi */
+}
+
+.list-group-item {
+    padding: 0.8rem 1rem; /* İç boşluk */
+    border-bottom: 1px solid var(--app-content-border-color); /* Alt sınır */
+    color: var(--app-content-font-color); /* Metin rengi */
+    background-color: var(--app-content-bg) !important; /* Arka plan rengi */
+    transition: background-color var(--app-transition-fast), color var(--app-transition-fast); /* Geçiş efekti */
+}
+
+.list-group-item:last-child {
+    border-bottom: none; /* Son elemanda alt sınırı kaldır */
+}
+
+.list-group-item:hover {
+    background-color: var(--app-content-hover-bg); /* Hover arka planı */
+    color: var(--app-content-heading-color); /* Hover metin rengi */
+    box-shadow: inset 0 0 0 1px var(--app-content-border-color); /* Hover sınır */
+}
+
+.list-group-item.active {
+    background-color: var(--app-primary); /* Aktif öğe arka planı */
+    color: var(--app-white); /* Aktif öğe metin rengi */
+    font-weight: var(--app-font-weight-bold); /* Aktif öğe yazı kalınlığı */
+}
+
 /* ... */
 /* 8.. Temel Yardımcı Classlar (Değişiklik Yok) */
 .text-center {

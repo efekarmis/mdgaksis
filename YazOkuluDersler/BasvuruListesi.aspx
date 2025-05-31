@@ -6,7 +6,7 @@
         <p class="text-muted">Öğrencilerin ders taleplerini onaylayın veya reddedin.</p>
         <hr />
 
-        <div class="table-responsive">
+        <div class="table-container">
             <table class="table table-bordered table-hover align-middle">
                 <thead class="table-light">
                     <tr>

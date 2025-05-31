@@ -1,10 +1,10 @@
 ﻿<%@ Page Title="Bakiye Yükle" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="BakiyeYukle.aspx.cs" Inherits="YazOkulu.BakiyeYukle" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
-    <div class="container-fluid">
+    <div class="container-fluid bakiye-yukle-page">
         <div class="login-card" style="max-width: 600px; margin: 30px auto; text-align: left;">
-            <h2>Bakiye Yükle</h2>
-            <hr />
+            <h3>Bakiye Yükle</h3>
+            <hr/>
 
             <div class="mb-3">
                 <h4>Mevcut Bakiyeniz:

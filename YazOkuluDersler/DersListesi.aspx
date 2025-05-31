@@ -19,7 +19,7 @@
             </asp:HyperLink>
         </div>
 
-        <div class="table-responsive">
+        <div class="table-container">
             <table class="table table-bordered table-hover align-middle">
                 <thead class="table-light">
                     <tr>

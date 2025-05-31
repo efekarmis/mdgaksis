@@ -1,0 +1,75 @@
+# Gizlilik ve Güvenlik
+# appsettings.Development.json genellikle yerel veritabanı bağlantı dizeleri gibi hassas bilgiler içerir.
+# Eğer bu dosyayı paylaşmak istemiyorsanız (önerilir), aşağıdaki satırı aktif bırakın.
+# Eğer paylaşıyorsanız ve içinde hassas bilgi yoksa, bu satırı yorum satırı yapın (# ile).
+appsettings.Development.json
+# User secrets dosyaları (ASP.NET Core'da daha yaygın olsa da, genel bir önlem)
+secrets.json
+**/secrets.json
+*.secrets.json
+
+# Rider
+.idea/
+*.DotSettings.user
+
+# Visual Studio
+.vs/
+*.suo
+*.user
+*.csproj.user
+*.vbproj.user
+
+# Build Artifacts
+**/[Bb]in/
+**/[Oo]bj/
+**/publish/ # Eğer publish klasörü kullanıyorsanız
+
+# NuGet Packages
+# packages klasörü artık kullanılmıyor, restore işlemi `packages.config` üzerinden yapılır.
+packages/
+# Eğer .NET Core/.NET 5+ kullanıyor olsaydınız ve paketler proje dosyasında yönetilseydi
+# bu satıra ihtiyaç olmazdı, ancak klasik ASP.NET ve packages.config için gereklidir.
+
+# Log dosyaları
+*.log
+logs/
+
+# Çalışma zamanı dosyaları
+*.pid
+*.seed
+*.pid.lock
+
+# Geçici dosyalar
+*.tmp
+*.bak
+*.old
+
+# İşletim Sistemi tarafından oluşturulan dosyalar
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Rider Cache dosyaları (eğer farklı bir yerde tutuluyorsa, genellikle .idea içindedir)
+# Rider Caches (System directory)
+# /Users/<user>/Library/Caches/JetBrains/Rider*/
+
+# Web sunucusu dosyaları (Visual Studio'nun IIS Express ayarları gibi)
+*.Publish.xml
+*.pubxml
+*.publishproj
+
+# Diğer
+# Örnek: Yerel veritabanı dosyaları (eğer proje içinde tutuluyorsa, genellikle dışarıda olmalı)
+# *.mdf
+# *.ldf
+
+# Eğer node_modules kullanıyorsanız (JS kütüphaneleri için)
+# node_modules/
+# npm-debug.log*
+# yarn-error.log

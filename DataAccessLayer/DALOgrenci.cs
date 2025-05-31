@@ -256,7 +256,7 @@ WHERE OSK.rn = 1;";
         public static bool BakiyeGuncelle(int ogrenciId, double eklenecekMiktar)
         {
             int etkilenenSatir = 0;
-            string query = "UPDATE TBLOGRENCI SET OGRBAKIYE = ISNULL(OGRBAKIYE, 0) + @EklenecekMiktar WHERE OGRID = @OgrenciId";
+            string query = "UPDATE TBLOGRENCI SET OGRBAKIYE = IFNULL(OGRBAKIYE, 0) + @EklenecekMiktar WHERE OGRID = @OgrenciId";
 
             using (MySqlConnection connection = new MySqlConnection(Baglanti.ConnectionString))
             using (MySqlCommand cmd = new MySqlCommand(query, connection))

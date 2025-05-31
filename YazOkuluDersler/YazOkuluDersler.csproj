@@ -224,6 +224,7 @@
         <Content Include="login-styles.css" />
         <Content Include="Login.aspx" />
         <Content Include="Logout.aspx" />
+        <Content Include="messaging-style.css" />
         <Content Include="navbar.css" />
         <Content Include="obj\Debug\YazOkuluDersler.csproj.AssemblyReference.cache" />
         <Content Include="obj\Debug\YazOkuluDersler.csproj.CopyComplete" />
@@ -262,6 +263,7 @@
         <Content Include="Scripts\jquery-3.7.1.slim.js" />
         <Content Include="Scripts\jquery-3.7.1.slim.min.js" />
         <Content Include="Scripts\login-animation.js" />
+        <Content Include="Scripts\script.js" />
         <Content Include="styles.css" />
         <Content Include="System.Web.Extensions.dll" />
         <Content Include="Web.config" />
