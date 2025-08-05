@@ -9,6 +9,6 @@ namespace DataAccessLayer
 {
     public class Baglanti
     {
-        public static readonly string ConnectionString = @"server=127.0.0.1;uid=root;pwd=ff3AE6q_x9ik;database=dbyazokulu";
+        public static readonly string ConnectionString = @"server=127.0.0.1;uid=root;pwd=fk;database=dbyazokulu";
     }
 }
